@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.deepxi.com.deepxi.mapper.SpcProductPreCategoryMapper">
+    <resultMap type="com.deepxi.com.deepxi.domain.dto.SpcProductPreCategoryDto" id="SpcProductPreCategoryDtoResult">
+        <result property="id" column="id" />
+        <result property="createdBy" column="created_by" />
+        <result property="createdAt" column="created_at" />
+        <result property="updatedBy" column="updated_by" />
+        <result property="updatedAt" column="updated_at" />
+        <result property="tenantId" column="tenant_id" />
+        <result property="productId" column="product_id" />
+        <result property="categoryId" column="category_id" />
+        <result property="dr" column="dr" />
+        <result property="ext1" column="ext1" />
+        <result property="ext2" column="ext2" />
+        <result property="ext3" column="ext3" />
+        <result property="ext4" column="ext4" />
+        <result property="extJson" column="ext_json" />
+    </resultMap>
+    <select id="findList" resultType="com.deepxi.com.deepxi.domain.eo.SpcProductPreCategory">
+        SELECT * FROM spc_product_pre_category WHERE 1=1
+    </select>
+
+    <update id="deleteByIds">
+        UPDATE spc_product_pre_category set dr=1 where id in
+        <foreach collection="ids" index="index" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>

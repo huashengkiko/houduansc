@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.deepxi.com.deepxi.mapper.HspOrderSummaryMapper">
+    <resultMap type="com.deepxi.com.deepxi.domain.dto.HspOrderSummaryDto" id="HspOrderSummaryDtoResult">
+        <result property="id" column="id" />
+        <result property="tenantCode" column="tenant_code" />
+        <result property="createdAt" column="created_at" />
+        <result property="createdBy" column="created_by" />
+        <result property="updatedAt" column="updated_at" />
+        <result property="updatedBy" column="updated_by" />
+        <result property="version" column="version" />
+        <result property="dr" column="dr" />
+        <result property="platformDiscountMoney" column="platform_discount_money" />
+        <result property="shopDiscountMoney" column="shop_discount_money" />
+        <result property="skuDiscountMoney" column="sku_discount_money" />
+        <result property="freightMoney" column="freight_money" />
+        <result property="itemMoney" column="item_money" />
+        <result property="payMoney" column="pay_money" />
+        <result property="memberId" column="member_id" />
+        <result property="memberName" column="member_name" />
+        <result property="memberCode" column="member_code" />
+        <result property="payType" column="pay_type" />
+        <result property="payChannel" column="pay_channel" />
+        <result property="payDeadline" column="pay_deadline" />
+        <result property="payOrderNo" column="pay_order_no" />
+        <result property="payStatus" column="pay_status" />
+        <result property="paidAt" column="paid_at" />
+        <result property="memberPhone" column="member_phone" />
+        <result property="remark1" column="remark1" />
+        <result property="remark2" column="remark2" />
+        <result property="remark3" column="remark3" />
+        <result property="remark4" column="remark4" />
+    </resultMap>
+    <select id="findList" resultType="com.deepxi.com.deepxi.domain.eo.HspOrderSummary">
+        SELECT * FROM hsp_order_summary WHERE 1=1
+    </select>
+
+    <update id="deleteByIds">
+        UPDATE hsp_order_summary set dr=1 where id in
+        <foreach collection="ids" index="index" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>
