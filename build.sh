@@ -13,4 +13,4 @@ docker run --rm \
    -v $proj_home:/usr/src/mymaven \
    -w /usr/src/mymaven $img_mvn mvn clean package -U
 
-mv $proj_home/com-uesr-provider/target/com-uesr-provider-*.jar $proj_home/com-uesr-provider/target/demo.jar
+mv $proj_home/deepexi-user-provider/target/deepexi-user-provider-*.jar $proj_home/deepexi-user-provider/target/demo.jar

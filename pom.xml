@@ -9,14 +9,14 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.deepxi</groupId>
-    <artifactId>com-uesr</artifactId>
+    <groupId>com.deepexi</groupId>
+    <artifactId>deepexi-user</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>com-uesr-api</module>
-        <module>com-uesr-provider</module>
+        <module>deepexi-user-api</module>
+        <module>deepexi-user-provider</module>
     </modules>
 
     <repositories>

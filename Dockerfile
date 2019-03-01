@@ -3,4 +3,4 @@ FROM fabric8/java-jboss-openjdk8-jdk
 
 USER root
 
-COPY com-uesr-provider/target/demo.jar /home/
+COPY deepexi-user-provider/target/demo.jar /home/
