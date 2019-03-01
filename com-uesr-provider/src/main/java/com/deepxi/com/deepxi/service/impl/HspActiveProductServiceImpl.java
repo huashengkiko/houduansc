@@ -41,40 +41,4 @@ public class HspActiveProductServiceImpl implements HspActiveProductService {
 
     @Override
     public Boolean update(String id,HspActiveProduct eo) {
-        HspActiveProduct old = hspActiveProductMapper.selectById(id);
-        BeanPowerHelper.mapCompleteOverrider(eo,old); //部分更新
-        int result = hspActiveProductMapper.updateById(old);
-        if (result > 0) {
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public Boolean create(HspActiveProduct eo) {
-        int result = hspActiveProductMapper.insert(eo);
-        if (result > 0) {
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public Boolean delete(String pk) {
-        int result = hspActiveProductMapper.deleteBatchIds(Arrays.asList(pk));
-        if (result > 0) {
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public Boolean delete(String...pks) {
-        int result = hspActiveProductMapper.deleteBatchIds(Arrays.asList(pks));
-        if (result > 0) {
-            return true;
-        }
-        return false;
-    }
-
-}
+        HspActiveProduct old = hspActiveProduc
